@@ -1,0 +1,39 @@
+<div aria-labelledby='pointSearchingModalLabel' class='modal fade' id='pointSearchingModal' role='dialog' style='display:none' tabindex='-1'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      
+      <div class="modal-header">
+        <button x-no-track-action type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      
+      <div class='modal-body'>
+        
+        <h3 ng-show = 'points.length == 0'>
+          Không tìm thấy từ.
+        </h3>
+        
+        <div ng-show = 'points.length > 0'>
+          <div ng-repeat="point in points track by point.id" class = "point-searching-result-item" >
+            <span x-show-point='point.split_content || point.content' ></span>
+            <span ng-show='point.pronunciation'>/{{point.pronunciation}}</span>/ <span x-dynamic="point.meaning"></span>
+            <div ng-show='point.main_example'>
+              <small class='calm'>
+                {{point.main_example.content}}
+              </small>
+              <br>
+              <i class='small' style='color: black' x-no-track-action >
+                {{point.main_example.meaning}}
+              </i>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+      <div class='modal-footer' style='text-align: center'>
+        <button class='btn btn-primary' ng-click='close_modal()' x-track-action="Close Point Searching Result">Đóng</button>
+      </div>
+    
+    </div>
+  </div>
+</div>

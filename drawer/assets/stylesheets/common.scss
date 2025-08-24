@@ -1,0 +1,78 @@
+@import "variables";
+
+html, body{
+  min-height: 100%;
+  height: 100%;
+}
+
+.main_content{
+  padding-top: 10px;
+  position: relative;
+}
+
+#main_flash div.alert{
+  margin-bottom: 0;
+  padding: 0.3em 1em;
+}
+
+a.btn-large-font, button.btn-large-font{
+  font-size: 30px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  height: auto;
+  width: auto;
+  line-height: 0;
+}
+
+span.inline-alert, span.inline-alert{
+  padding: 6px;
+}
+
+#back_button{
+  display: inline-block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+#back_button_container{
+  background: transparent;
+  border: 0;
+}
+
+.calm{
+  color: $calm
+}
+
+.assertive{
+  color: $assertive;
+}
+
+.dark{
+  color: $dark;
+}
+
+span.required {
+  padding-left: 1px;
+  color: $assertive;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.icon-big{
+  font-size: 2em
+}
+
+#loading-bar .bar{
+  height: 0.25em;
+  min-height: 4px;
+  background-color: green;
+}
+
+button:focus, button:active{
+  outline:0 !important;
+}

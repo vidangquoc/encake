@@ -1,0 +1,100 @@
+<input ng-init="swf_files_path = '<%= asset_path('soundmanager2/swf/soundmanager2.swf') %>'" type='hidden'>
+<div class='col-xs-12' id='review_page'  >
+  
+  <div ng-show='review.feedback == "none"' >
+  
+    <div id='display_screen' x-full-page >
+      
+      <div id='review_pane' class='center_align' ng-show='review_active' >
+        <div ng-show='review.has_points != "yes"' ng-include src='"templates/review_no_points_left.html"'></div>
+        
+        <div ng-show='review.has_points == "yes"'>        
+          <div ng-include ng-show="current_point.reviewed_skill == 'interpret'" src='"templates/review_interpret.html"'></div>
+          <div ng-include ng-show="current_point.reviewed_skill == 'grammar'" src='"templates/review_grammar.html"'></div>
+          <div ng-include ng-show="current_point.reviewed_skill == 'sentence_dictate'" src='"templates/review_sentence_dictate.html"'></div>
+          <div ng-include ng-show="current_point.reviewed_skill == 'sentence_listen_and_repeat'" src='"templates/review_sentence_listen_and_repeat.html"'></div>
+          <div ng-show='review.window_suitable_for_action_buttons' ng-include src='"templates/review_action_buttons.html"'></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div ng-include src='"templates/review_bottom_buttons.html"'></div>
+    
+    <div x-show-review-mode x-total-points='total_points' x-due-points='due_points' x-on-mode-switch='force_mode' x-mode='states.mode' x-unselected-classes='btn-primary' x-selected-classes='btn-default disabled current_mode' ></div>
+    
+    <div x-show_level data='review.level_data' x-learning-progress='states.progress'></div>
+    
+    <div x-show_added_score score='review.added_score' x-show='review.added_score_shown' ></div>
+    
+    <div x-show-rewarded-lucky-stars
+         x-number-of-rewarded-lucky-stars='review.number_of_rewarded_lucky_stars'
+         x-lucky-star-image='review.lucky_star_image'
+         x-show='review.number_of_rewarded_lucky_stars_shown' >
+    </div>
+    
+    
+    <div x-teaser_update_modal
+        x-data='teaser_data'
+        x-visible='review.teaser_updater_shown'
+        x-after-show='disable_window_keyup()'
+        x-before-hide='enable_window_keyup()'
+        x-update-teaser-path='/user_actions/(action_id)/update_teaser'
+    >
+    </div>
+    <!--
+    <div x-new_level_modal
+        x-new_level='new_level'
+        x-visible='review.new_level_shown'
+        x-after-show='disable_window_keyup()'
+        x-before-hide='enable_window_keyup()'
+    >
+    </div>
+    -->
+    <div x-window_keyup
+        x-enabled='window_keyup_enabled'
+        x-enter='next_point()'
+        x-left-arrow='previous_point()'
+        x-right-arrow='next_point()'
+        x-up-arrow='remind_point_or_wrong_answer_assert()'
+        x-track-actions = '{{ {enter: "Next (enter)", up_arrow: "Help (up arrow)", left_arrow: "Previous (left_arrow)", right_arrow: "Next (right_arrow)"} }}'
+        x-action-data="{{review.tracked_data}}"
+    >
+    </div>
+    <div x-point-searching-result-modal
+        x-points='review.searched_points'
+        x-visible='review.searched_points_shown'
+        x-after-show='disable_window_keyup()'
+        x-before-hide='enable_window_keyup()'
+    >
+    </div>
+    
+    <div x-opportunity-modal
+        x-opportunity='review.opportunity'
+        x-visible='review.opportunity_shown'
+        x-after-show='disable_window_keyup()'
+        x-before-hide='enable_window_keyup()'
+    >
+    </div>
+    <div x-on-window-size-change = 'on_window_size_change(width, height)'></div>
+
+  </div>
+   
+  <!--
+  <input type='radio' ng-model='a' value='1' />
+  <input type='radio' ng-model='a' value='2' />
+  -->
+  <div id='feedback_pane' ng-show='review.feedback != "none"' x-full-page >
+    
+    <div class='center_align' > 
+      
+      <div ng-include ng-show='review.feedback == "new_level"' src='"templates/review_feedbacks/new_level.html"'></div>
+      
+      <div x-teaser-feedback x-data='teaser_data' ng-show='review.feedback == "teaser"' x-on-confirm='hide_feedback()' > </div>
+      
+    </div>
+  
+  </div>
+  
+</div>

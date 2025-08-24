@@ -1,0 +1,11 @@
+<span x-show-point='current_point.split_content || current_point.content' ></span>
+<span ng-show='current_point.pronunciation'>/{{current_point.pronunciation}}</span>/ <span x-dynamic="current_point.meaning"></span>
+<div ng-show='current_point.main_example'>
+  <small class='calm'>
+    <span x-click-to-search-text='current_point.main_example.content'  x-on-search-finish = 'show_search_result(points)' > </span>
+  </small>
+  <br>
+  <i class='small' style='color: black' x-no-track-action >
+    {{current_point.main_example.meaning}}
+  </i>
+</div>

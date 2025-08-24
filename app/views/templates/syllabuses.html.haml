@@ -1,0 +1,23 @@
+#accordion.panel-group
+    
+  .panel.panel-default{"ng-repeat" => 'syllabus in syllabuses'}
+  
+    .panel-heading
+    
+      %h4.panel-title
+      
+        %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "syllabus_{{syllabus.id}}"}
+        
+          {{syllabus.name}}
+          
+    .panel-collapse.collapse.syllabus{id:"syllabus_{{syllabus.id}}", 'x-data-id' => '{{syllabus.id}}'}
+    
+      .panel-body
+      
+        %ul.list-group{style: 'margin: 0px'}
+                               
+          %li.list-group-item{'ng-repeat' => 'lesson in syllabus.lessons'}
+      
+            %a{href: "#lessons/{{lesson.id}}"}
+              {{lesson.name}}
+            

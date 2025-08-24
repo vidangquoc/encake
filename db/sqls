@@ -1,0 +1,5 @@
+SELECT ABANDONED SOUNDS:
+  SELECT for_content FROM sounds
+  LEFT JOIN points ON sounds.id = points.sound_id
+  LEFT JOIN examples ON sounds.id = examples.sound_id
+  WHERE points.sound_id IS NULL and examples.id IS NULL;

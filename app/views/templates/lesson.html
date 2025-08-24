@@ -1,0 +1,15 @@
+<div class='col-xs-12 main_content' id='lesson'>
+
+    <div>
+    <h3>
+      {{lesson.name}}
+    </h3>
+  </div>
+  
+  <div id='video_container' ng-show='lesson.video_url'>
+    <iframe x-fluid-iframe ng-src="{{lesson.video_url | trustUrl}}"></iframe>  
+  </div>
+  
+  <div x-dynamic='lesson.content' x-no-track-action ></div>
+
+</div>

@@ -1,0 +1,24 @@
+/*
+*= require cropper/cropper
+*/
+
+#image_of_beloved_canvas #beloved_compliment{ display: inline-block; width: 250px; text-align:center; border: solid gray 1px; border-radius: 50px; padding: 15px; line-height: 1.8em; margin-bottom: 2px}
+#image_of_beloved_canvas .current_image_container{position: relative; display: inline-block}
+#image_of_beloved_canvas #image_of_beloved_change_btn{right: 0; bottom: 0; position: absolute}
+#image_of_beloved_canvas #current_image_of_beloved
+#image_of_beloved_canvas #image_cropping_canvas{display: none}
+#image_of_beloved_canvas #image_cropping_canvas > span{padding: 10px 5px 0px 5px; border: solid lightpink 1px; border-radius: 10px; display: inline-block;}
+#image_of_beloved_canvas{text-align:center}
+#image_of_beloved_canvas .cropping_canvas_col{width: 270px}
+#image_of_beloved_canvas .cropping_outer_container{display:inline-block; position: relative}
+#image_of_beloved_canvas #image_of_beloved_loader_container{width: 100%; height: 100%; position: absolute; z-index: 2; background-color: white; display: none}
+#image_of_beloved_canvas #image_of_beloved_loader_container span{position: absolute; top: 50%; left: 50%; line-height: 1em}
+#image_of_beloved_canvas #image_of_beloved_loader_container img{margin-left: -50%; margin-top: -50%}
+#image_of_beloved_canvas #image_of_beloved_zoom_control_buttons{position:absolute; right: 0; top: 0; z-index: 1; display:none}
+#image_of_beloved_canvas #image_of_beloved_cropping_container{width: 200px; height:200px; overflow: hidden}
+/*#image_of_beloved_canvas #image_of_beloved_crop_btn{display: none}*/
+#image_of_beloved_canvas #image_of_beloved_preview{width: 200px; height: 200px; overflow: hidden; margin-top: 82px; margin-left: 35px}
+
+#image_of_beloved_canvas .tooltip.in{opacity: 1}
+#image_of_beloved_canvas .tooltip-inner{background-color: pink; color: red}
+#image_of_beloved_canvas .tooltip-arrow{ border-top-color: pink}

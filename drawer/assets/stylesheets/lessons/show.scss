@@ -1,0 +1,82 @@
+#lesson {
+  
+  #video_container{
+    padding: 1em 0;
+    width: 100%;
+    max-width: 600px;
+    iframe{
+      border: 0px;
+    }
+  }
+  
+  padding-bottom: 60px;
+  /*.popover-title{
+    padding: 3px 3px 3px 5px;
+    border: 0
+  }
+  .popover-content{
+    padding: 0px 3px;
+    font-weight: normal;
+    color: #333333;  
+  }*/
+  
+  .translator{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .translator .mark{
+    position: absolute;
+    top: -1.6em;
+    left: -0.4em;
+    opacity: 0.5;
+    z-index: 1;
+    border: solid green 1px;
+    padding: 0.1em 0.4em;
+    display: inline-block;
+    background-color: lightgray;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius: 1.5em;
+    color: black;
+    font-weight: normal;
+  }
+  
+  .translator .tooltip-trigger{
+    
+    position: absolute;
+    top: -1.9em;
+    left: -1em;    
+    opacity: 0.0;
+    z-index: 2;
+    border: solid green 1px;
+    padding: 0.5em 0.7em;
+    display: inline-block;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius: 1.5em;
+    
+  }
+  
+  .indent-1{padding-left: 1em}
+  .indent-2{padding-left: 2em}
+  .indent-3{padding-left: 3em}
+  .indent-4{padding-left: 4em}
+  
+  .margin-bottom-1{margin-bottom: 1em}
+  .margin-bottom-2{margin-bottom: 2em}
+  .margin-bottom-3{margin-bottom: 3em}
+  .margin-bottom-4{margin-bottom: 4em}
+  
+  .smaller{font-size: 0.8em}
+  .small{font-size: 0.9em}
+  .big{font-size: 1.1em}
+  .bigger{font-size: 1.2em}
+  
+  .line-height-1-5{line-height: 1.5em}
+  .line-height-1-8{line-height: 1.8em}
+  .line-height-2-1{line-height: 2.1em}
+  .line-height-2-4{line-height: 2.4em}
+
+}

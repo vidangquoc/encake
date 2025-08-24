@@ -1,0 +1,14 @@
+<div>
+  <div id='level_container'>
+    <div id='current_level'>
+      <img sv-src='<%= asset_path 'level.png' %>'>
+      <span class='calm'>{{current_level.position}}</span>
+    </div>
+    <div id='level_progress' ng-show='progress_percent'>
+      <div style='width:{{progress_percent}}%'></div>
+    </div>
+    <div id='progress-container' ng-show='learning_progress > 0'>
+      <div id='progress' style='width: {{learning_progress}}%'></div>  
+    </div>
+  </div>
+</div>

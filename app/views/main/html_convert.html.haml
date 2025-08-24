@@ -1,0 +1,24 @@
+.col-xs-12.main_content#friends_page
+
+  %ul.list-unstyled{'ng-show' => 'friends.length > 1'}
+  
+    %li{'ng-repeat' => "friend in friends"}
+    
+      %img.friend_image{'sv-src' => '{{friend.avatar.thumb.url}}'}
+      
+      .friend_info
+      
+        %span.dark.friend_name
+          {{friend.middle_name}} {{friend.first_name}}
+          
+        %br/
+        
+        %small.calm
+          {{friend.score}}
+
+  #no_friends{'ng-show' => 'friends.length <= 1'}
+      
+    Chưa có bạn
+    /          
+      %a.btn.btn-primary{href: '#invite_friends'} Mời bạn
+                    

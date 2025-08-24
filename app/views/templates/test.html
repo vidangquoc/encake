@@ -1,0 +1,94 @@
+<ul class='list-group'>
+  <li class='list-group-item point-container'>
+    <span x-click-to-search >Click To Search</span>
+  </li>
+  <li class='list-group-item point-container'>
+    Show Point <span x-show-point='"res.pon..si.bi.li.ty"'></span>
+  </li>
+  <li class='list-group-item'>
+    <button x-no-track-action ng-click='log_to_server()'>Log To Server</button>
+  </li>
+  <li class='list-group-item'>
+    <ion-item x-no-track-action >
+      <a>Click me!</a>
+      <button>Click me!</button>
+      <input type='button' value='Click' class='btn' />
+      <i class='fa fa-microphone' />
+    </ion-item>
+  </li>
+  <li class='list-group-item'>
+    <button x-track-action="Test" x-action-data="{{ {a: action_data, b: 1} }}"  >Track Action</button>
+  </li>
+  <li class='list-group-item'>
+    <form name="testForm" server-validation-message-collector="validation_messages" novalidate >
+      <input type="text" name="first_name", ngModel="user.first_name" />
+      <button class="btn" ng-click="set_validation_messages()" no-track-action >Set Validation Messages</button>
+    </form>
+  </li>
+  <li class='list-group-item'>
+    <button ng-click="login()" no-track-action >Log In</button>
+  </li>
+  <li class='list-group-item'>
+    <button ng-click="logout()" no-track-action >Log Out</button>
+  </li>
+  <li class='list-group-item'>
+    <button ng-click="log_current_user()" no-track-action >Log Current User</button>
+  </li>
+  <li class='list-group-item'>
+    <button class='btn btn-primary' show-spinner="loader_shown" x-spinner-text="Loading ..." ng-click="show_loader()" no-track-action >Show Spinner</button>
+    <button class="btn" ng-click="hide_loader()" no-track-action >Hide Spinner</button>
+  </li>
+  <li class='list-group-item'>
+    <button class="btn" ng-click="throw_error()" no-track-action >Throw error</button>
+  </li>
+  <li class='list-group-item'>
+    <button class="btn" ng-click="detect_invalid_point()" no-track-action >Detect Invalid Point</button>
+  </li>
+  <li class='list-group-item'>
+    <button class="btn" show-spinner="firing_request" ng-click="fire_an_ajax_request()" no-track-action>Fire An Ajax Request</button>
+  </li>
+  <li class='list-group-item'>
+    <button class="btn fa" id = 'speech_trigger' no-track-action >
+      <i
+         x-speech
+         x-speech-model='test.s_model'
+         x-speech-trigger-id = 'speech_trigger'
+         x-speech-active-classes='fa-microphone assertive'
+         x-speech-inactive-classes='fa-microphone'
+         x-speech-unavailable-classes='fa-microphone-slash'
+         class='fa'
+         x-no-track-action
+      >
+      </i>
+    </button>
+    <button class="btn fa" id = 'speech_trigger_2' no-track-action >
+      <i
+         x-speech
+         x-speech-model='test.s_model'
+         x-speech-trigger-id = 'speech_trigger_2'
+         x-speech-active-classes='fa-microphone assertive'
+         x-speech-inactive-classes='fa-microphone'
+         x-speech-unavailable-classes='fa-microphone-slash'
+         class='fa'
+         x-no-track-action
+      >
+      </i>
+    </button>
+  </li>
+  <li class='list-group-item'>
+    <div>+ {{source}}</div>
+    <div>+ {{dests[0]}}</div>
+    <div>
+      <span x-word-diff-many x-left-obj='source' x-right-objs='dests'></span>
+    </div>
+  </li>
+  
+  <li class='list-group-item' x-insert-input x-content="content" x-link-input-to = 'answer'>
+    
+  </li>
+  
+  <li class='list-group-item'>
+    <button ng-click="create_failed_request()" no-track-action >Create Failed Request</button>
+  </li>
+  
+</ul>

@@ -1,0 +1,44 @@
+Context:
+
+  Models
+  {
+    User: 1,
+    Syllabus: 5,
+    Lesson: 25,
+  }
+  
+  RelationShips
+    [
+      [Syllabus, Lesson, has_many]
+    ]
+  
+  Updates
+  
+    [
+      [Syllabus, :all, { syllabus.lessons.last.move_higher }],
+      [Lesson, 1, {active: false}]
+    ]
+    
+  Variables:
+  
+    [
+      [user, User, 1],
+      [current_syllabus, Syllabus, [syllabus_order, asc], 3],
+      [current_lesson, {@current_syllabus.lessons.order(:position).first(3).last} ]
+    ]
+  
+  Updates
+  
+    [
+      [@user, current_lesson, @current_lesson]
+    ]
+
+Action:
+  
+  Variables:
+    [
+      
+    ]
+  
+
+expect

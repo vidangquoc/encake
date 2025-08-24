@@ -1,0 +1,11 @@
+/*= require 'jquery.powertip/css/jquery.powertip-light' */
+/*= require shared/beloved */
+
+#poin_choosing_notice{padding-top: 6px; padding-bottom: 8px; vertical-align: middle}
+#choose_points{margin-bottom: 0px}
+#choose_points .list-group-item{padding-top: 3px; padding-bottom: 3px; margin: 0px; border-top-width: 0px}
+#point_chosing_canvas .list-group-item{padding-top: 5px; padding-bottom: 5px}
+#beloved{min-height: 400px; max-width: 580px; margin-left: -10px; overflow:hidden; display:none}  
+#point_choosing_confirm_btn{vertical-align: middle;}
+#wrong_answer_tooltip{position:absolute; width: 145px; height: 1px; display:block; top: 5px}
+form div.form-group{margin-bottom: 15px}

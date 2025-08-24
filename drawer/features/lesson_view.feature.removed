@@ -1,0 +1,48 @@
+Feature: view lesson content
+  In order to see the content of a lesson
+  As an english learner
+  I want to view a lesson
+  
+  Background: a lesson exist
+    Given A lesson exists
+    And I have signed in
+    
+    
+  Scenario: view lesson content    
+    When I view the lesson
+    Then I see content of the lesson
+    And I see lists of points grouped in categories
+    And Categories are sorted by their pre-defined positions in accending order
+    #And I can open the associated video of the lesson
+  
+ 
+  Scenario: hide content between [[[ and ]]] in lesson content
+    Given Content of the lesson contains several occurences of [[[ and ]]] with text in them
+    When I view the lesson
+    Then I don't see the content between the occurences of [[[ and ]]] in lesson content
+  
+  
+  Scenario: see video if one exists
+    Given The lesson has a associated video
+    When I view the lesson
+    Then I see the video
+    
+    
+  Scenario: don't see video if none exist
+    Given The lesson do not have associated video
+    When I view the lesson
+    Then I do not see any video
+   
+  
+  Scenario: see link to test page if the viewed lesson is the current lesson
+    Given I have already signed in
+    And The lesson is my current lesson
+    When I view the lesson
+    Then I see a link for me to take test
+  
+  
+  Scenario: doesn't see link to test page if the viewed lesson is not the current lesson
+    Given I have already signed in
+    And The lesson is not my current lesson
+    When I view the lesson
+    Then I don't see a link for me to take test

@@ -1,0 +1,27 @@
+<div class='col-xs-12 main_content' id='friends_page'>
+  <ul class='list-unstyled' ng-show='friends.length > 1'>
+    <li ng-repeat='friend in friends'>
+      <img class='friend_image' sv-src='{{friend.avatar.thumb.url}}'>
+      <div class='friend_info'>
+        <div>
+          <span class='dark friend_name'>
+            {{friend.middle_name}} {{friend.first_name}}
+          </span>
+        </div>
+        <div class='level'>
+          <img class='level-image' sv-src='<%= asset_path 'level.png' %>' />
+          <small class='calm position'>{{friend.level.position}}</small>
+        </div>
+        <div>
+          <small>Điểm:</small> <small class='calm'>{{friend.score}}</small>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div id='no_friends' ng-show='friends.length <= 1'>
+    Chưa có bạn
+    <!--
+      <a class='btn btn-primary' href='#invite_friends'>Mời bạn</a>
+    -->
+  </div>
+</div>

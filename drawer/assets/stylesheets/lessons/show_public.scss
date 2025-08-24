@@ -1,0 +1,31 @@
+/*= require 'jquery.powertip/css/jquery.powertip-light' */
+/*= require 'lessons/show' */
+
+#lesson{
+
+  table{
+    border-collapse: collapse;
+    border: none
+  }
+  
+  td, th{
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border: none;
+    /*border-bottom: solid lightgray 1px*/
+  }
+  
+  .vertical-border td, .vertical-border th{
+    border-bottom: none;
+    border-left: solid lightgray 1px;
+    /*padding: 0 1em;*/
+  }
+  
+  .vertical-border td:first-child, .vertical-border th:first-child{
+    border-bottom: none;
+    border-left: none
+  }
+
+}

@@ -1,0 +1,81 @@
+<div id='actions'>
+  
+  <div id='microphone_dictating'
+    ng-show="states.shown_buttons['speech']"
+    class='button-container big_icon'
+  >
+    <i class='fa calm'
+       x-on-start="states.recorded = ''"
+       x-speech x-speech-active-classes='fa-microphone assertive'
+       x-speech-inactive-classes='fa-microphone'
+       x-speech-model='states.recorded'
+       x-speech-trigger-id='microphone_dictating'
+       x-speech-unavailable-classes='fa-microphone-slash'
+       x-track-action="Speech" x-action-data="{{review.tracked_data}}"
+    ></i>
+  </div>
+  
+  <div
+    ng-click='play_sound()'
+    x-track-action="Listen" x-action-data="{{review.tracked_data}}"
+    ng-show="states.shown_buttons['play_sound']" class='button-container big_icon'
+  >
+      <i class='fa fa-volume-up calm' ></i>
+  </div>
+  
+  <div
+    ng-show='states.shown_buttons["master"]'
+    ng-click='mark_as_mastered()' x-track-action="Master" x-action-data="{{review.tracked_data}}" class='big_icon button-container'
+  >
+      <i class='fa fa-hand-grab-o calm' ></i>
+  </div>
+  
+  <div
+      ng-show='states.shown_buttons["unmaster"]'
+      x-track-action="Un-master" x-action-data="{{review.tracked_data}}"
+      ng-click='mark_as_unmastered()'
+      class='big_icon button-container'
+    >
+      <i class='fa fa-hand-paper-o calm' ></i>
+  </div>
+  
+  <div
+    ng-show="states.shown_buttons['view_lesson']"
+    x-go-to-state='logged.lesson' x-to-state-params='{"lesson_id": {{current_point.main_example.grammar_point.lesson_id || current_point.lesson_id}}, "show_back": true}'
+    x-track-action="View Lesson" action-data="{{review.tracked_data}}"
+    class='big_icon button-container'
+  >
+    <i class='fa fa-book calm' ></i>
+  </div>
+  
+  <div
+    ng-show="states.shown_buttons['view_image']"
+    x-click-to-open-url='https://www.google.com/search?safe=active&amp;tbm=isch&amp;q={{current_point.google_search_key || current_point.content}}'
+    x-track-action="View Pictures"
+    x-action-data="{{review.tracked_data}}"
+    class='big_icon button-container'
+  >
+    <i class='fa fa-google calm' ></i>
+  </div>
+  
+  <div
+    ng-show="states.shown_buttons['view_example']"
+    x-track-action="View Examples" x-action-data="{{review.tracked_data}}"
+    ng-click='view_example()'
+    class='button-container big_icon'
+  >
+    <i class='fa fa-list calm' ></i>
+  </div>
+  
+  <div
+    ng-show="states.shown_buttons['edit']" 
+    x-go-to-state='logged.edit_point' x-to-state-params='{"point_id": {{current_point.id}}}'
+    x-track-action="Edit Word" x-action-data="{{review.tracked_data}}"
+    class='big_icon button-container'
+  >
+    <i class='fa fa-edit calm' ></i>
+
+  </div>
+    
+  
+</div>

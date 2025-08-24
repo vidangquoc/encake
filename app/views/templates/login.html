@@ -1,0 +1,18 @@
+<div class='col-xs-12' id='login_page'>
+  <form class='form-signin' ng-submit='login()'>
+    <input  ng-model="user.email" type="email" class="form-control" placeholder="Email" autofocus="autofocus" />
+    <input ng-model="user.password" type="password" class="form-control" placeholder="Mật khẩu" style='margin-top: 5px' autocomplete='off'  />
+    <button type='submit'
+            x-show-spinner='logging'
+            class="btn btn-lg btn-primary"
+            x-track-action='Log In'
+    >
+      Đăng Nhập
+    </button>
+    &nbsp;&nbsp; <a ng-href='#recover_password?email={{user.email}}&show_back=1' x-track-action='Forget Password' >Quên mật khẩu?</a>
+    <div>
+      <br/>
+      <a href='#register?show_back=1' x-track-action='Register' >Đăng kí tài khoản</a>
+    </div>    
+  </form>
+</div>

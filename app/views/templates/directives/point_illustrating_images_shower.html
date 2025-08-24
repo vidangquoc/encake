@@ -1,0 +1,11 @@
+<div ng-show='point.images.length > 0' class='wrapper' >
+  <div class='inner-wrapper'>
+    <img sv-src='{{current_image_url}}' x-hide-on-loading = 'false' />
+    <button ng-disabled="current_index == 0" ng-click='previous()' x-track-action="Previous Point Image" class='btn btn-default left' type='button' >
+      <i class='fa fa-arrow-left' ></i>
+    </button>
+    <button ng-disabled="current_index == point.images.length - 1" ng-click='next()' x-track-action="Next Point Image" class='btn btn-default right' type='button' >
+      <i class='fa fa-arrow-right' ></i>
+    </button>
+  </div>
+</div>

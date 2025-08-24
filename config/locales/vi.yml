@@ -1,0 +1,283 @@
+#Active Record will look for messages in this order:
+
+#activerecord.errors.models.admin.attributes.name.blank
+#activerecord.errors.models.admin.blank
+#activerecord.errors.models.user.attributes.name.blank
+#activerecord.errors.models.user.blank
+#activerecord.errors.messages.blank
+#errors.attributes.name.blank
+#errors.messages.blank
+
+vi:
+    
+  errors:
+    messages:
+      carrierwave_processing_error: "Không thể thay đổi kích thước hình"
+      carrierwave_integrity_error: "Không phải là file hình"
+      carrierwave_download_error: "Không thể tải hình xuống"
+      extension_white_list_error: "Bạn không được phép tải lên file dạng %{extension}, các dạng được phép: %{allowed_types}"
+      extension_black_list_error: "Bạn không được phép tải lên file dạng %{extension}, các dạng bị cấm: %{prohibited_types}"
+
+      carrierwave_download_error: Không thể tải hồ sơ
+      content_type_whitelist_error: "Bạn không được tải lên các tệp tin %{content_type}, các dạng được phép: %{allowed_types}"
+      content_type_blacklist_error: "Bạn không được phép tải lên các tệp tin %{content_type}"
+      rmagick_processing_error: "Không thể xử lí tệp tin, không phải là tệp tin hình ảnh?"
+      mini_magick_processing_error: "Không thể xử lí tệp tin, bạn đã tải lên tệp tin hình ảnh?"
+      min_size_error: "Kích cỡ tệp tin phải lớn hơn %{min_size}"
+      max_size_error: "Kích cỡ tệp tin không được lớn hơn %{max_size}"
+    
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Dữ liệu không hợp lệ'
+      models:
+        user:
+          attributes:
+            base:
+              signin_invalid: Tên đăng nhập hoặc mật khẩu không đúng
+              signin_email_and_password_required: Hãy nhập đầy đủ email và mật khẩu
+            email:
+              blank: Hãy nhập email
+              invalid: Email không hợp lệ
+              taken: Email này đã được đăng kí. Hãy chọn email khác    
+            password:
+              blank: Hãy nhập mật khẩu
+              too_short: Mật khẩu cần ít nhất %{count} kí tự
+              too_long: Mật khẩu chứa tối đa %{count} kí tự
+              invalid: Mật khẩu không được chứa kí tự unicode              
+            password_confirmation:
+              confirmation: Không khớp với mật khẩu
+            gender:
+              blank: Hãy chọn giới tính
+              inclusion: Giới tính chỉ có thể là nam hay nữ
+            nickname:
+              blank: Hãy nhập biệt danh
+              too_short: Biệt danh cần ít nhấp %{count} kí tự
+              too_long: Biệt danh chứa tối đa %{count} kí tự
+              invalid: Biệt danh chỉ có thể chứa các kí tự [A-Z, a-z, 0-9]
+              taken: Biệt danh đã được sử dụng
+            first_name:
+              blank: Hãy nhập tên
+            last_name:
+              blank: Hãy nhập họ
+            relationship_to_beloved:
+              blank: Hãy xác định quan hệ
+            image_of_beloved:
+              blank: Hãy chọn hình
+            user_type:
+              inclusion: Loại người dùng không hợp lệ
+              
+        administrator:
+          attributes:
+            email:
+              taken: Email này đã được đăng kí. Hãy chọn email khác
+              
+        answer:
+          attributes:
+            content:
+              blank: Hãy nhập câu trả lời
+            question_id:
+              blank: Hãy chọn câu hỏi
+              
+        category:
+          attributes:
+            name:
+              blank: Hãy nhập loại
+              
+        example:
+          attributes:
+            content:
+              blank: Hãy nhập ví dụ
+            meaning:
+              blank: Hãy nhập nghĩa tiếng Việt của ví dụ
+            point_id:
+              blank: Hãy chọn điểm nhớ
+            grammar_point_id:
+              blank: Hãy chọn điểm ngữ pháp
+        
+        example_alternative:
+          attributes:
+            example_id:
+              blank: Hãy chọn ví dụ
+            content:
+              blank: Hãy nhập nội dung
+              
+        lesson:
+          attributes:
+            name:
+              blank: Hãy nhập tên bài học
+            content:
+              blank: Hãy nhập nội dung bài học
+            syllabus_id:
+              blank: Hãy chọn cấp độ
+              
+        level:
+          attributes:
+            name:
+              blank: Hãy nhập tên
+            highest_score:
+              blank: Hãy nhập số thứ tự
+              not_a_number: Số thứ tự phải là một con số
+              not_an_integer: Số thứ tự phải là số nguyên              
+        
+        syllabus:
+          attributes:
+            name:
+              blank: Hãy nhập tên
+            syllabus_order:
+              blank: Hãy nhập số thứ tự
+              not_a_number: Số thứ tự phải là một con số
+              not_an_integer: Số thứ tự phải là số nguyên
+              taken: Số thứ tự này đã được sử dụng
+              
+        point:
+          attributes:
+            content:
+              blank: Hãy nhập từ
+            lesson_id:
+              blank: Hãy chọn bài học
+            meaning_in_english:
+              blank: Hãy nhập nghĩa tiếng anh
+            meaning:
+              blank: Hãy nhập nghĩa tiếng Việt
+            point_type:
+              blank: Hãy chọn từ loại
+        
+        question:
+          attributes:
+            content:
+              blank : Hãy nhập câu hỏi
+            point_id:
+              blank: Hãy chọn điểm nhớ
+            question_type:
+              blank: Hãy chọn kiểu câu hỏi
+            answer:
+              blank: Hãy nhập câu trả lời
+            question_type:
+              blank: Hãy chọn kiểu câu hỏi
+              inclusion: Sai kiểu câu hỏi
+        
+        sound:
+          attributes:
+            for_content:
+              blank: Hãy nhập nội dung
+              taken: Nội dung này đã được sử dụng
+        
+        grammar_point:
+          attributes:
+            lesson_id:
+              blank: Hãy chọn bài học
+            content:
+              blank: Hãy nhập nội dung
+              
+        common_word:
+          attributes:
+            content:
+              blank: Hãy nhập nội dung
+        
+        user_event:
+          attributes:
+            user_id:
+              blank: Hãy cung cấp user_id
+        
+        device_key:
+          attributes:
+            user_id:
+              blank: Hãy cung cấp user_id
+            platform:
+              blank: Hãy cung cấp platform
+              inclusion: Platform không hợp lệ
+            key:
+              blank: Hãy cung cấp key
+              taken: Key này đã được sử dụng
+        
+        push_notification:
+          attributes:
+            to_user_id:
+              blank: Hãy cung cấp to_user_id
+            message:
+              blank: Hãy cung cấp message
+            to_device_keys:
+              blank: Hãy cung cấp to_device_key
+            platform:
+              blank: Hãy cung cấp platform
+        
+        friend_teaser:
+          attributes:
+            teasing_phase:
+              blank: Hãy nhập câu chọc ghẹo
+            selected_times:
+              blank: Hãy nhập số lần được chọn
+              
+        authentication_token:
+          attributes:
+            user_id:
+              blank: Hãy cung cấp user id
+            user_type:
+              blank: Hãy cung cấp loại người dùng
+              inclusion: Loại người dùng không hợp lệ
+            token:
+              blank: Hãy cung cấp token
+              taken: Already used
+        
+        user_ui_action:
+          attributes:
+            user_id:
+              blank: Hãy cung cấp user id
+            action:
+              blank: Hãy cung cấp action
+            action_time:
+              blank: Hãy cung cấp action time
+            view:
+              blank: Hãy cung cấp view
+            device:
+              blank: Hãy cung cấp device
+              
+        badge_type:
+          attributes:
+            badge_type:
+              blank: Hãy cung cấp loại huy chương
+              inclusion: Loại huy chương không hợp lệ
+            badge_sub_type:
+              blank: Hãy cung cấp loại huy chương con
+            name:
+              blank: Hãy cung cấp tên
+            number_of_efforts_to_get:
+              blank: Hãy cung cấp số lần nổ lực
+        point_image:
+          attributes:
+            point_id:
+              blank: Hãy cung cấp point_id
+            image:
+              blank: Hình phải có
+              
+  #test_passed_notice: Giỏi lắm bạn đã vượt qua bài kiểm. Nào, hãy chinh phục bài học kế tiếp.
+  
+  #test_failed_notice: Bạn chưa vượt qua bài kiểm rồi! Hãy xem lại bài học và thử lại lúc khác nhé!
+  
+  users:
+    basic_information:
+      update_success: Đã cập nhật
+    recover_password:
+      non_existing_account: Tài khoản này không tồn tại
+      email_required: Hãy nhập email.
+      recovering_password_sent: Mật khẩu mới đã được gửi đến email của bạn
+    add_point_to_bag:
+      added: Đã thêm vào sổ từ
+    deactivate_point_in_bag:
+      deactivated: Đã loại khỏi sổ từ
+    update_avatar:
+      success: 'Đã cập nhật hình đại diện'
+  
+  invitations:
+    new:
+      empty_contacts: "Không có email nào trong danh sách của bạn"
+    direct_invite:  
+      invitations_sent: "Thư mời đã được gửi"
+      email_addresses_required: "Hãy nhập địa chỉ email"
+      invalid_email_addresses: "Một số địa chỉ email không hợp lệ, hãy kiểm tra lại"
+      
+  confirm_registration:
+    success: Kích hoạt tài khoản thành công.
+    email_not_exist: Kích hoạt tài khoản thất bại. Không tìm thấy địa chỉ email trong hệ thống.
+    invalid_confirmation_hash: Kích hoạt tài khoản thất bại. Mã kích hoạt không hợp lệ.

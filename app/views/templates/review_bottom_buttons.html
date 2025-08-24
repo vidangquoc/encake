@@ -1,0 +1,61 @@
+<div id='bottom_btns'>
+    
+  <div id='asserting_question' ng-show="states.current_stage=='asserting'">
+    {{review.asserting_questions[current_point.reviewed_skill]}}
+  </div>
+
+  <div ng-show='review_active' >
+    
+    <a
+      x-on-outside-click='review.more_action_shown = false'
+      ng-disabled='states.first_listening'
+      x-track-action="More Actions" ng-click='review.more_action_shown = !review.more_action_shown'
+      id='more_actions_container'
+      class='btn btn-lg btn-default bottom_button'
+    >
+      <i class='fa fa-angle-double-up' ng-show='!review.more_action_shown' ></i>
+      <i class='fa fa-angle-double-down' ng-show='review.more_action_shown' ></i>
+      <div id='more_actions' ng-show='review.more_action_shown' >
+        <div ng-include src="'templates/review_action_buttons_list.html'"></div>
+      </div>
+    </a>
+    
+    <span ng-show="states.current_stage=='asking'" >
+      <button
+        ng-disabled='states.first_listening'
+        ng-click='remind_point()'
+        
+        x-track-action="Help" x-action-data="{{review.tracked_data}}"
+        class='btn btn-lg btn-warning bottom_button'
+        type='button'
+      >
+        Nhắc <i class='fa fa-question'></i>
+      </button>
+      <a class='btn btn-lg btn-primary bottom_button'
+         x-track-action="Next"
+         x-action-data="{{review.tracked_data}}"
+         ng-click='next_point()'
+      >
+        <span ng-show='!states.first_listening'>Tiếp</span>
+        <i class='fa fa-arrow-right'></i>
+      </a>
+    </span>
+    
+    <span ng-show="states.current_stage=='asserting'" >
+      <a class='btn btn-lg btn-warning bottom_button'
+         x-track-action="Wrong" x-action-data="{{review.tracked_data}}"
+         ng-click='next_point(false)'
+      >
+        Không
+      </a>
+      <a class='btn btn-lg btn-primary bottom_button'
+         x-track-action="Right" x-action-data="{{review.tracked_data}}"
+         ng-click='next_point()'
+      >
+        Đúng
+      </a>  
+    </span>
+    
+  </div>
+
+</div>

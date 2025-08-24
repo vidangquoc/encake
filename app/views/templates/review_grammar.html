@@ -1,0 +1,52 @@
+<div ng-show='states.current_stage=="asking"'>
+  <div class='section alert alert-info review_title'>
+    <span ng-show="current_point.question.question_type=='choosing'">
+      Đoán câu trả lời đúng
+    </span>
+    <span ng-show="current_point.question.question_type=='filling_in_right_form'">
+      Đoán dạng đúng của từ trong ngoặc
+    </span>
+    <span ng-show="current_point.question.question_type=='filling_in'">
+      Đoán từ thích hợp trong ô trống
+    </span>
+  </div>
+  <div class='section grammar_question'>
+    <div>
+      <div style='margin-bottom: 1em' >
+        <span x-insert-blank x-content='current_point.question.content' x-answer='states.answer' ></span>
+      </div>
+      <ul class='list-group' ng-if="current_point.question.question_type=='choosing'">
+        <li class='list-group-item'
+            ng-repeat='answer in current_point.question.answers track by answer.id'
+            ng-class="{'right_status': answer.id == $parent.states.answer_with_right_status_id}"
+        
+        >
+          {{$index + 1}}. {{answer.content}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div ng-show='states.current_stage=="asserting"'>
+  <div class='section alert alert-info review_title'>
+      Đáp án
+  </div>
+  <div class='section grammar_question'>
+    <div>
+      <div style='margin-bottom: 1em' >
+        <span x-insert-blank x-content='current_point.question.content' x-answer='states.answer' ></span>
+      </div>
+      <ul class='list-group' ng-if="current_point.question.question_type=='choosing'">
+        <li class='list-group-item'
+            ng-repeat='answer in current_point.question.answers track by answer.id'
+            ng-class="{'right_status': answer.id == $parent.states.answer_with_right_status_id}"
+        >
+          {{$index + 1}}. {{answer.content}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<input x-add-property-to='review.asserting_questions' x-property-value='Bạn đoán đúng không?' x-property-name='grammar' type='hidden'/>

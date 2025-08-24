@@ -1,0 +1,1 @@
+PerformanceMonitor.new.subscribe if Rails.env.production?

@@ -1,0 +1,29 @@
+love:
+  word:
+    content: love    
+    meaning: yêu
+    type: v
+  example:
+    content: I love you
+    meaning: Tôi yêu em
+  question:
+    content: I {...} you
+    question_type: filling_in
+    answers: love| loves| loved
+    right_answer: love
+  #no variations here
+    
+hate:      
+  word:
+    content: hate
+    meaning: ghét
+    type: v
+  example:
+    content: I hate you
+    meaning: Tôi ghét bạn
+  question:
+    content: I {...} you
+    question_type: filling_in
+    answers: hate| hates| hated
+    right_answer: hate
+  variations: hating| hated     

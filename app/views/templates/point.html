@@ -1,0 +1,103 @@
+<div class='col-xs-12 main_content' id='add_point_page'>
+  <form ng-submit='submit()' name='pointForm' server-validation-message-collector="point.validation_messages" novalidate autocomplete="off" class="form-horizontal">
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_content">Từ <span class='required'>*</span></label>
+      <div class = 'col-md-4'>
+        <input id="point_content" ng-model='point.content' name='content' x-focus-by='focus_content' reset-validation-message-on-change placeholder="Từ" class="form-control" />
+        <div class="error-container" ng-show="pointForm.content.$invalid" ng-messages="pointForm.content.$error">
+          <div class="error" ng-message="content">
+            <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{pointForm.content.$error.content}}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_split_content">Tách Từ</label>
+      <div class="col-md-4">
+        <input id="point_split_content" ng-model='point.split_content' placeholder="Ví dụ: beautiful -> beau.ti.ful" class="form-control" >
+        <p class="help-block">Dễ nhớ hơn khi ôn tập</p>
+      </div>
+    </div>
+        
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_type">Từ Loại <span class='required'>*</span></label>
+      <div class="col-md-4">
+        <select id="point_type" ng-model='point.point_type' name='point_type' reset-validation-message-on-change class="form-control">
+          <option value=''> -- Chọn Từ Loại -- </option>
+          <option ng-repeat="(key, text) in point_types" value='{{key}}' ng-selected='key == point.point_type' >{{text}}</option>
+        </select>
+        <div class="error-container" ng-show="pointForm.point_type.$invalid" ng-messages="pointForm.point_type.$error">
+          <div class="error" ng-message="point_type">
+            <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{pointForm.point_type.$error.point_type}}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_pronunciation">Phiên Âm</label>
+      <div class="col-md-4">
+        <input id="point_pronunciation" ng-model='point.pronunciation' placeholder="Phiên Âm" class="form-control" >
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_meaning_in_english">Nghĩa Tiếng Anh </label>
+      <div class="col-md-4">
+        <input id="point_meaning_in_english" ng-model='point.meaning_in_english' name='meaning_in_english' placeholder="Nghĩa Tiếng Anh" class="form-control" >
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="point_meaning">Nghĩa Tiếng Việt <span class='required'>*</span></label>
+      <div class="col-md-4">
+        <input id="point_meaning" ng-model='point.meaning' name='meaning' reset-validation-message-on-change placeholder="Nghĩa Tiếng Việt" class="form-control" >
+        <div class="error-container" ng-show="pointForm.meaning.$invalid" ng-messages="pointForm.meaning.$error">
+          <div class="error" ng-message="meaning">
+            <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{pointForm.meaning.$error.meaning}}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="example_content">Ví Dụ <span class='required'>*</span></label>
+      <div class="col-md-4">
+        <input id="example_content" ng-model='point.main_example_attributes.content' name='main_example.content' reset-validation-message-on-change placeholder="Ví Dụ" class="form-control">
+        <div class="error-container" ng-show="pointForm['main_example.content'].$invalid" ng-messages="pointForm['main_example.content'].$error">
+          <div class="error" ng-message="main_example.content">
+            <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{pointForm['main_example.content'].$error['main_example.content']}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="example_meaning">Dịch Ví Dụ <span class='required'>*</span></label>
+      <div class="col-md-4">
+        <input id="example_meaning" ng-model='point.main_example_attributes.meaning' name='main_example.meaning' reset-validation-message-on-change placeholder="Dịch Nghĩa Ví Dụ" class="form-control">
+        <div class="error-container" ng-show="pointForm['main_example.meaning'].$invalid" ng-messages="pointForm['main_example.meaning'].$error">
+          <div class="error" ng-message="main_example.meaning">
+            <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{pointForm['main_example.meaning'].$error['main_example.meaning']}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for=""></label>
+      <div class="col-md-8">
+        <span ng-show='!edit_mode'>
+          <button type='submit' class="btn btn-primary" x-show-spinner='saving' x-track-action="Add Word" x-action-data="{{point.content}}" >Thêm</button>
+        </span>
+        <span ng-show='edit_mode'>
+          <button type='submit' class="btn btn-primary" x-show-spinner='saving' x-track-action="Update Word" x-action-data="{{point.content}}" >Cập Nhật</button>
+        </span>
+        &nbsp;<a href='' ng-click='go_back()' x-track-action="Go Back" >Trở Về</a>
+      </div>
+    </div>
+    
+  </form>
+</div>

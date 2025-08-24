@@ -1,0 +1,31 @@
+<div class='section alert alert-info review_title' id="no-points-left">
+  <div ng-show='review.has_points == "no"'>
+    Bạn không còn gì để học hay ôn tập, bạn cừ lắm!
+  </div>
+  <div ng-show='review.has_points == "no_review"'>
+    <div class='title'>
+      Bạn không còn gì để ôn tập
+    </div>
+    <div>
+      <a class='btn btn-lg btn-primary'
+        x-track-action="Switch to Learning New (.)"
+        ng-click='force_mode("learning")'
+      >
+        Học Mới
+      </a>
+    </div>
+  </div>
+  <div ng-show='review.has_points == "no_new"'>
+    <div class='title'>
+      Bạn không còn gì mới để học
+    </div>
+    <div>
+      <a class='btn btn-lg btn-primary'
+        x-track-action="Switch to Review (.)"
+        ng-click='force_mode("reviewing")'
+      >
+        Ôn Tập
+      </a>
+    </div>
+  </div>
+</div>

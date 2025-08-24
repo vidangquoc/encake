@@ -1,0 +1,17 @@
+.break-word{
+  
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+/* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+/*.well{padding: 10px 0px}
+
+ul.list-group{margin: 0px}*/

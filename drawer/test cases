@@ -1,0 +1,10 @@
+Review:
++ Null States
+  . Forced mode = 'none'
+    . Show no points left message
+  . Forced mode = 'learning'
+    . Show no points left message
+    . Show button for switching to "Reviewing" mode
+  . Forced mode = 'reviewing'
+    . Show no points left message
+    . Show button for switching to "Learning" mode

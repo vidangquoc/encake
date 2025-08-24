@@ -1,0 +1,18 @@
+/*= require 'jquery.powertip/css/jquery.powertip-light' */
+
+.point-content{cursor: pointer}
+.point-meaning{cursor: pointer}
+.point-sound{cursor: pointer}
+.point-example-sound{cursor: pointer}
+.point-example{cursor: pointer}
+
+td.google_search {width: 2em; height: 2em; padding-left: 0px !important}
+td.google_search img{width: 2em; height: 2em}
+
+td.point-sound-container {width: 2em; height: 2em; padding-left: 0px !important}
+td.point-sound-container img{width: 2em; height: 2em}
+
+td.point-content-container{padding-left: 0px !important}
+
+td.point-example-sound-container{width: 2em; height: 2em; padding-right: 0px !important}
+td.point-example-sound-container img{width: 2em; height: 2em}

@@ -1,0 +1,14 @@
+http://development.public.encake.com/lessons
+http://development.public.encake.com/lessons/1
+http://development.public.encake.com/(signed-in and non-signed-in)
+http://development.public.encake.com/points_review
+http://development.public.encake.com/basic_information
+http://development.public.encake.com/invitations/new -> test: http://development.public.encake.com/invitations/test_layout_for_new
+http://development.public.encake.com/pre_test
+http://development.public.encake.com/test
+http://development.public.encake.com/signin
+http://development.public.encake.com/signup
+http://development.public.encake.com/remind_confirmation
+http://development.public.encake.com/direct_invite
+
+http://development.public.encake.com/about_us

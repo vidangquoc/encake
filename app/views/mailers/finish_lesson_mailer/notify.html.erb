@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'emails' %>
+
+<%= @from_user.name %> đã học <%= @lesson_count %> bài và đạt thêm <%= @score_added %> điểm, 
+<% if @score_diff > 0 then %>
+  nới rộng khoảng cách với bạn lên <%= @score_diff %> điểm.
+  <p class='btn-container'>
+    <a class="btn" href="<%= root_url %>" >Rút Ngắn Khoảng Cách</a>
+  </p>
+<% else %>
+  rút ngắn khoảng cách với bạn xuống còn <%= @score_diff.abs %> điểm.
+  <p class='btn-container'>
+    <a class="btn" href="<%= root_url %>" >Nới Rộng Khoảng Cách</a>
+  </p>
+<% end %>

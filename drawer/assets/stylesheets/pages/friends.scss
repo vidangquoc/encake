@@ -1,0 +1,44 @@
+#friends_page{
+  
+  li{
+    margin-bottom: 10px;
+  }
+  
+  img.friend_image{
+    vertical-align: top;
+  }
+  
+  .friend_info{
+    padding-left: 0.5em;
+    display: inline-block;
+  }
+  
+  .friend_name{
+    font-size: 0.9em
+  }  
+  
+  #no_friends{padding:15px}
+  
+  .level-image{
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+  }
+  
+  .friend_info div{
+    
+    margin-top: .3em;
+    
+    /*.level {
+      .level-image{
+        display: inline-block;
+      }
+      .position{
+        display: inline-block;
+        padding-bottom: 0.1em;
+      }
+    }*/
+  }
+  
+}
+

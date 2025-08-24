@@ -1,0 +1,39 @@
+<div class="navbar navbar-inverse navbar-default" id='top_navbar' >
+  
+  <div class="container-fluid" >
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/" x-track-action="Click Home" >
+				<i class='fa fa-home'></i>
+			</a>
+      <button data-target="#navbar-main" data-toggle="collapse" type="button" class="navbar-toggle collapsed" x-track-action = "Click Menu" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+        
+    <div x-auto-collapse id="navbar-main" class="navbar-collapse collapse">
+      
+      <ul class="nav navbar-nav">
+				<li><a href="#/points" x-track-action="Click Word List" >Sổ Từ</a></li>
+        <!--<li><a href="#/syllabuses">Bài học</a></li>-->
+        <li><a href="#/friends" x-track-action="Click Friends" >Bạn bè</a></li>
+        <li><a href="#/profile" x-track-action="Click Profile" >Hồ Sơ</a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="#" ng-click="logout()" x-track-action="Click Logout" >Đăng Xuất</a></li>
+      </ul>
+      
+    </div>
+    
+  </div>
+    
+</div>
+
+<ng-include src="'templates/_flash.html'" ></ng-include>
+
+<div class='container-fluid'>
+	<div ui-view='logged_content' class='row'></div>
+</div>

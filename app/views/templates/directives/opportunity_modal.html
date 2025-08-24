@@ -1,0 +1,102 @@
+<div aria-labelledby='opportunityModalLabel' class='modal fade' id='opportunityModal' role='dialog' style='display:none' tabindex='-1'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      
+      <div class='modal-body'>
+        
+        <div ng-show='stage == "init"' >
+          <div>
+            <span ng-show='opportunity.badge_type.badge_type == "warrior"' >
+              Tuyệt! Hôm nay, bạn đã học <strong>{{opportunity.badge_type.number_of_efforts_to_get}} mục</strong>  liên tục, bạn được trao cơ hội nhận huy chương
+            </span>
+            <span ng-show='opportunity.badge_type.badge_type == "diligent"' >
+              Tuyệt! bạn đã học <strong>{{opportunity.badge_type.number_of_efforts_to_get}} ngày</strong>  liên tục, bạn được trao cơ hội nhận huy chương
+            </span>
+          </div>
+          <div class='text-center' style='padding: 2em' >
+            <img x-sv-src='{{opportunity.badge_type.image_url}}' /><br/>
+            <div style='padding-top: 0.5em'>
+              <strong >{{opportunity.badge_type.name}}</strong>
+            </div>
+          </div>
+          <div ng-show='opportunity.next_badge_type'>
+            <span ng-show='opportunity.badge_type.badge_type == "warrior"' >
+              Bạn có thể bỏ qua cơ hội này để có cơ hội nhận huy chương <strong>{{opportunity.next_badge_type.name}}</strong>
+              (học thêm <strong>{{opportunity.next_badge_type.number_of_efforts_to_get - opportunity.badge_type.number_of_efforts_to_get}} mục</strong> trong hôm nay)
+            </span>
+            <span ng-show='opportunity.badge_type.badge_type == "diligent"' >
+              Bạn có thể bỏ qua cơ hội này để có cơ hội nhận huy chương <strong>{{opportunity.next_badge_type.name}}</strong>
+              (học thêm <strong>{{opportunity.next_badge_type.number_of_efforts_to_get - opportunity.badge_type.number_of_efforts_to_get}} ngày</strong> liên tục)
+            </span>
+          </div>  
+        </div>
+        
+        <div ng-show='stage == "taking"' >
+          <div class='text-center' style='padding: 2em' >
+            <div>
+              <strong >{{opportunity.badge_type.name}}</strong>
+            </div>
+            <div style='margin-top: 0.4em'>
+              <img x-sv-src='{{opportunity.badge_type.image_url}}' />
+            </div>
+            <div style='margin-top: 0.4em'  >
+              Cơ hội trúng <strong class='calm'>{{possibility}}</strong>%
+            </div>
+            <div style='margin-top: 2em' >
+              Sử dụng
+              <select ng-model='exchanges.number_of_used_lucky_stars' ng-change='update_possibility()' class='form-control' style='display: inline; width: auto' >
+                <option ng-repeat = 'number in star_numbers' value='{{number}}' >{{number}}</option>
+              </select>
+              ngôi sao may mắn
+              <div style='margin-top: 0.4em'>
+                <small><em>( Hiện bạn có {{opportunity.number_of_lucky_stars}} ngôi sao may mắn )</em></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div ng-show='stage == "finished"' >
+          
+          <div>
+            <span ng-show = 'is_won'>
+              Tuyệt vời! Bạn đã nhận được huy chương
+            </span>
+            <span ng-show = '!is_won' >
+              Tiếc quá! Bạn không nhận được huy chương
+            </span>
+          </div>
+          <div class='text-center' style='padding: 2em' >
+            <img x-sv-src='{{opportunity.badge_type.image_url}}' /><br/>
+            <div style='padding-top: 0.5em'>
+              <strong >{{opportunity.badge_type.name}}</strong>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div ng-show='stage == "processing"' >
+          <div  class='text-center' style='padding: 2em' >
+            <img x-sv-src='{{opportunity.processing_image}}' />
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class='modal-footer' style='text-align: center' ng-show = 'stage != "processing"' >
+        <span ng-show='opportunity.next_badge_type && (stage == "init" || stage == "taking")' >
+          <button class='btn btn-default' ng-click='ignore_opportunity()' type='button' x-track-action="Ignore Opportunity" x-action-data="{{opportunity.badge_type}}">Bỏ Qua Cơ Hội</button>
+        </span>
+        <span ng-show='stage == "init"' >
+          <button class='btn btn-primary' ng-click='start_taking_opportunity()' type='button' x-track-action="Start Taking Opportunity" x-action-data="{{opportunity.badge_type}}">Sử Dụng Cơ Hội</button>
+        </span>
+        <span ng-show='stage == "taking"' >
+          <button class='btn btn-primary' ng-click='take_opportunity()' type='button' x-track-action="Take Opportunity" x-action-data="{{opportunity.badge_type}}">Bắt Đầu</button>
+        </span>
+        <span ng-show='stage == "finished"' >
+          <button class='btn btn-primary' ng-click='close_modal()' type='button' x-track-action="Close Opportunity Modal" x-action-data="{{opportunity.badge_type}}">Đóng</button>
+        </span>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.col-xs-12.main_content
+
+  %form{novalidate: true, 'ng-submit' => 'submit()'}
+  
+    %fieldset
+    
+      .form-group
+      
+        .col-lg-12
+        
+          %label{for: 'invited_emails'} Hãy nhập email (mỗi email một dòng):
+      
+        .col-lg-12
+  
+          %textarea.form-control{'ng-model' => 'invited_emails', style: 'height: 300px'}
+      
+      .form-group
+      
+        .col-sm-5.col-md-3
+              
+          %input.btn.btn-primary.btn-lg.btn-block{type: 'submit', value: 'Mời bạn'}

@@ -1,0 +1,24 @@
+<div aria-labelledby='teasersModalLabel' class='modal fade' id='teasersModal' role='dialog' style='display:none' tabindex='-1'>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      <div class='modal-body'>
+        <div class='well'>
+          Bạn vượt qua <strong>{{data.friend_names.join(', ')}}</strong>. Chọc quê bằng cách.
+        </div>
+        <ul class='list-group'>
+          <% FriendTeaser.where(is_active:true).limit(5).order('selected_times DESC').each_with_index do |teaser, index| %>
+            <li class='list-group-item'>
+              <label>
+                <input name='selected_teaser_id' ng-model='selected_teaser_id' <%= index == 0 ? 'ng-value' : '' %> type='radio' value='<%= teaser.id %>'>
+                <%= teaser.teasing_phase %>
+              </label>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class='modal-footer' style='text-align: center'>
+        <button class='btn btn-primary' ng-click='update_teaser()' type='button' x-track-action="Tease" x-action-data="{{selected_teaser_id}}">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+</div>

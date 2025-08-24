@@ -1,0 +1,22 @@
+Repetition factors should
+1. Keep retention rate high
+2. But still let learners advance with high speed
+
++ Calculate total repeating times across all skills
++ Specify repetition factors
+
+Idias:
+
+- Create translating skill only for points with short examples (less than 10 words)
+- Custom values for repitition factors
+- Private point -> show previous example
+
+- Number of times a word being reviewed in 1 year for values of repetition factors
+
+  + spelling, pronouncing: 2.5, translating: 3.5, listening: 2.5)
+	
+	+ equation: due_date = today + spacing_factor**(effectively_reviewed_times)) days
+
+  7(with spelling) + 7(with pronouncing) + 5x7(with translating) + 5x5(with listening) = 55
+ 
+

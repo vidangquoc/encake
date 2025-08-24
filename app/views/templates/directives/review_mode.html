@@ -1,0 +1,26 @@
+<div id='mode'>
+  <a class='btn'
+     x-track-action="Switch to Learning New"
+     ng-click='switch("learning")'
+     ng-class='learning_classes'
+  >
+    Học Mới
+  </a>
+  <a class='btn'
+      x-track-action="Switch to Review Due"
+      ng-click='switch("reviewing")'
+      ng-class='reviewing_classes'
+    >
+      Ôn Tập
+  </a>
+  
+  <div style='padding-top: 0.2em'>
+    Đã học
+    <span class='calm'>{{total_points}}</span>
+    mục,
+    cần ôn
+    <span class='assertive'>{{due_points}}</span>
+    mục
+  </div>
+  
+</div>

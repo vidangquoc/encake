@@ -1,0 +1,286 @@
+glass:
+  word:
+    content: glass
+    split_content: 
+    meaning: cái cốc; (một) cốc
+    type: n
+  example:
+    content: Tony would like a glass of orange juice.
+    meaning: 
+  question:
+    content: Tony would like a glass of orange juice.
+    answers: 
+    right_answer: 
+  variations: 
+    
+thank:
+  word:
+    content: thank
+    split_content: 
+    meaning: cám ơn, biết ơn
+    type: v
+  example:
+    content: Mary would like to thank you for your ((help)).
+    meaning: 
+  question:
+    content: Mary would like to thank you for your ((help)).
+    answers: 
+    right_answer: 
+  variations: 
+    
+for:
+  word:
+    content: for
+    split_content: 
+    meaning: vì, bởi vì
+    type: prep
+  example:
+    content: Mary would like to thank you for your ((help)).
+    meaning: 
+  question:
+    content: Mary would like to thank you for your ((help)).
+    answers: 
+    right_answer: 
+  variations: 
+    
+help:
+  word:
+    content: help
+    split_content: 
+    meaning: sự giúp đỡ, sự cứu giúp, sự giúp ích
+    type: n
+  example:
+    content: Mary would like to thank you for your ((help)).
+    meaning: 
+  question:
+    content: Mary would like to thank you for your ((help)).
+    answers: 
+    right_answer: 
+  variations: 
+    
+united:
+  word:
+    content: united
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: Would Robert like to visit United States? Yes, he would.
+    meaning: 
+  question:
+    content: Would Robert like to visit United States? Yes, he would.
+    answers: 
+    right_answer: 
+  variations: 
+    
+states:
+  word:
+    content: states
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: Would Robert like to visit United States? Yes, he would.
+    meaning: 
+  question:
+    content: Would Robert like to visit United States? Yes, he would.
+    answers: 
+    right_answer: 
+  variations: 
+    
+kindness:
+  word:
+    content: kindness
+    split_content: 
+    meaning: sự tử tế, sự ân cần; lòng tốt
+    type: n
+  example:
+    content: I would like to thank you for your kindness.
+    meaning: 
+  question:
+    content: I would like to thank you for your kindness.
+    answers: 
+    right_answer: 
+  variations: 
+    
+tomato:
+  word:
+    content: tomato
+    split_content: 
+    meaning: quả cà chua
+    type: n
+  example:
+    content: Would you like a cup of tomato juice? Yes, I would. Thank you.
+    meaning: 
+  question:
+    content: Would you like a cup of tomato juice? Yes, I would. Thank you.
+    answers: 
+    right_answer: 
+  variations: 
+    
+thank you:
+  word:
+    content: thank you
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: Mary would like to thank you for your ((help)).
+    meaning: 
+  question:
+    content: Mary would like to thank you for your ((help)).
+    answers: 
+    right_answer: 
+  variations: 
+    
+sugar:
+  word:
+    content: sugar
+    split_content: 
+    meaning: đường
+    type: n
+  example:
+    content: He'd like some sugar in his coffee.
+    meaning: 
+  question:
+    content: He'd like some sugar in his coffee.
+    answers: 
+    right_answer: 
+  variations: 
+    
+chess:
+  word:
+    content: chess
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: What would your brother like to do? He'd like to play chess.
+    meaning: 
+  question:
+    content: What would your brother like to do? He'd like to play chess.
+    answers: 
+    right_answer: 
+  variations: 
+    
+peach:
+  word:
+    content: peach
+    split_content: 
+    meaning: quả đào
+    type: n
+  example:
+    content: What would you like to drink? I'd like a glass of peach juice.
+    meaning: 
+  question:
+    content: What would you like to drink? I'd like a glass of peach juice.
+    answers: 
+    right_answer: 
+  variations: 
+    
+pineapple:
+  word:
+    content: pineapple
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: Bob and Anita would like some pineapple juice.
+    meaning: 
+  question:
+    content: Bob and Anita would like some pineapple juice.
+    answers: 
+    right_answer: 
+  variations: 
+    
+ski:
+  word:
+    content: ski
+    split_content: 
+    meaning: trượt tuyết; đi xki
+    type: v
+  example:
+    content: What would Bob like to do this weekend? He'd like to go ski.
+    meaning: 
+  question:
+    content: What would Bob like to do this weekend? He'd like to go ski.
+    answers: 
+    right_answer: 
+  variations: 
+    
+salt:
+  word:
+    content: salt
+    split_content: 
+    meaning: muối
+    type: n
+  example:
+    content: They'd like some salt in their soup.
+    meaning: 
+  question:
+    content: They'd like some salt in their soup.
+    answers: 
+    right_answer: 
+  variations: 
+    
+singapore:
+  word:
+    content: singapore
+    split_content: 
+    meaning: 
+    type: 
+  example:
+    content: What country would you like to visit? I'd like to visit Singapore.
+    meaning: 
+  question:
+    content: What country would you like to visit? I'd like to visit Singapore.
+    answers: 
+    right_answer: 
+  variations: 
+    
+hospitality:
+  word:
+    content: hospitality
+    split_content: 
+    meaning: lòng mến khách
+    type: n
+  example:
+    content: My friends would like to thank you for your hospitality.
+    meaning: 
+  question:
+    content: My friends would like to thank you for your hospitality.
+    answers: 
+    right_answer: 
+  variations: 
+    
+card:
+  word:
+    content: card
+    split_content: 
+    meaning: quân bài, bài ((cũng) playing card)
+    type: n
+  example:
+    content: What would Ben and Bob like to do after class today?They'd like to play card.
+    meaning: 
+  question:
+    content: What would Ben and Bob like to do after class today?They'd like to play card.
+    answers: 
+    right_answer: 
+  variations: 
+    
+learn:
+  word:
+    content: learn
+    split_content: 
+    meaning: học, học tập
+    type: v
+  example:
+    content: What language would you like to learn? I'd like to learn English.
+    meaning: 
+  question:
+    content: What language would you like to learn? I'd like to learn English.
+    answers: 
+    right_answer: 
+  variations: 
+    
+    

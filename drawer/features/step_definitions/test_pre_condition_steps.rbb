@@ -1,0 +1,44 @@
+Given(/^I have decided to take test$/) do  
+  @test = TakenTest.one  
+  @user = User.one.belongs_to(Level.one)
+  @test.belongs_to(@user).belongs_to(@user.level) 
+  signin @user
+end
+
+
+
+Given(/^I have not taken the test$/) do
+  @user.taken_tests.delete_all
+end
+When(/^I access pre-condition test page$/) do
+  visit pre_test_path
+end
+Then(/^I see a message telling me that if I failed the test I would not be able to re-take it after (\d+) days$/) do |arg1|
+  has_tag_with_id("div", "pre_test_notice")
+  has_tag_with_id("span", "retake_test_after")
+end
+Then(/^I have chance to proceed to the next step$/) do
+  expect(page).to have_xpath("//form[@id = 'create_test_form' and @action = '#{taken_tests_path}' and @method = 'POST']")
+  expect(page).to have_xpath("//form[@id = 'create_test_form']/input[@id='create_test_btn' and @type = 'submit']")
+end
+Then(/^I have chance to cancel the process$/) do
+  has_link href: root_path
+end
+
+
+
+Given(/^I failed the test (\d+) days ago or more$/) do |number_of_days|
+  @test.update_attribute 'created_on', Constants.allowed_to_retake_test_after.days.ago.to_date  
+end
+
+
+
+Given(/^I have failed the test less than (\d+) days ago$/) do |number_of_days|
+  @test.update_attribute 'created_on', (Constants.allowed_to_retake_test_after -1).days.ago.to_date  
+end
+Then(/^I see a message telling me that I am not able to take the test$/) do
+  has_tag_with_id("div", "test_recently_failed_notice")
+end
+Then(/^I see the days left after which I will be able to re-take the test$/) do
+  has_tag_with_id("span", "retake_test_after")
+end

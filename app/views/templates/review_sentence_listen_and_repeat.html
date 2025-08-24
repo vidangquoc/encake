@@ -1,0 +1,42 @@
+<div ng-show="states.current_stage == 'asking'">
+
+  <div class='section alert alert-info review_title' ng-hide='states.show_reminding'>
+    Lắng nghe và lập lại
+  </div>
+  
+  <div class='section' ng-show='!states.show_reminding' >
+    <div id='first_listening' ng-show='states.first_listening'>
+      <i class='fa fa-play calm'
+         ng-click='play_sound_for_first_listening();'
+         x-track-action="Listen First"
+         x-action-data="{{track_action_data()}}"
+      ></i>
+    </div>
+    <div ng-show='states.recorded'>
+      <em>
+        <small>
+          {{states.recorded}}
+        </small>
+      </em>
+    </div>
+  </div>
+  
+  <div class='section alert alert-warning'
+       ng-include src='"templates/review_example.html"'
+       ng-show='states.show_reminding'>
+  </div>
+
+</div>
+
+<div ng-show="states.current_stage == 'asserting'">
+  <div class='section alert alert-info review_title'>
+    Đáp án
+  </div>
+  <div class='section'>
+    <span>
+      <span x-click-to-search-text='current_point.main_example.content'  x-on-search-finish = 'show_search_result(points)' > </span>
+    </span>
+  </div>
+</div>
+
+<input x-add-property-to='review.asserting_questions' x-property-value='Bạn nghe đúng không?' x-property-name='sentence_listen_and_repeat' type='hidden'/>

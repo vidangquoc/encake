@@ -1,0 +1,24 @@
+.btn{
+  -webkit-user-select: none;
+  background-color: rgb(66, 139, 202);
+  border: solid rgb(53, 126, 189) 1px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  height: 45px;
+  line-height: 1.33em;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+}
+
+p.btn-container{
+  padding-top: 25px;
+}

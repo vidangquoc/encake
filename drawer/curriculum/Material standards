@@ -1,0 +1,31 @@
+1. Each example for new words must have a period at the end.
+2. Nghĩa của tên riêng được trình bày ở dạng (tên riêng) {tên}. Ví dụ (tên riêng) Jane
+3. Sau từ khóa của yaml phải có 1 dấu cách rồi mới đến nội dung
+
+4. Các bước tạo bài học
+
+  + Tạo nội dung bài
+  + Xem từ mới trong bài, đảm bảo mỗi câu ví dụ có một từ mới
+  + Chọn nghĩa cho các từ mới
+  + Xuất các từ mới ra tập tin
+  + Hoàn thiện tập tin chứa từ mới ( kiểm tra lại nghĩa của từ với google dictionary và vdict )
+  + Nhập từ mới cho bài học từ tập tin chứa từ mới
+      
+  + Kiếm tra các câu hỏi của bài học  
+  + Thêm điểm ngữ pháp cho bài học
+  + Kiểm tra điểm ngữ pháp của ví dụ
+      
+  + Kiểm tra minh họa hình ảnh của các từ mới (bằng google search)
+  + Kiểm tra âm thanh, phiên âm của từ mới
+  + Kiểm tra dạng tách từ của từ mới
+  + Kiểm tra từ loại, nghĩa của từ mới
+  
+  + Kiểm tra dịch nghĩa của ví dụ
+  + Tìm âm thanh cho các ví dụ
+  + Kiểm tra âm thanh của ví dụ
+  
+  + Kiểm tra nội dung bài học
+  + Kiểm tra dịch nghĩa của các câu trong nội dung bài học
+  
+  
+5. Với câu hỏi điền vào chỗ trống dùng ___ (3 dấu gạch dưới).  

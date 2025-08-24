@@ -1,0 +1,13 @@
+The goals of your site introduction are:
+
+    To let the visitor know, as quickly as possible, what the website is about.
+    To give hints as to what action (or actions) they can take immediately (call to action).
+    To provide contextual information regarding what to expect should the visitor decide to spend more time on the site.
+    
+    http://sixrevisions.com/web_design/website-introductory-text-tips-examples/
+    
+    + People rarely read Web pages word by word; instead, they scan the page, picking out individual words and sentences.
+    
+    + Web users are busy: they want to get the straight facts.
+    
+    + Using succinct copy, placing the intro text in a highly visible position, using common typographic styling and leveraging surrounding visuals to your advantage are among the popular trends used in today’s site introductory text.

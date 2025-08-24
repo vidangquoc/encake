@@ -1,0 +1,15 @@
+<div>
+  <small class='calm'>
+    <span x-click-to-search-text='current_point.main_example.content'  x-on-search-finish = 'show_search_result(points)' > </span>
+  </small>
+</div>
+<div class='recorded' ng-show='states.recorded'>
+  <em>
+    <small left_obj='states.recorded' right_objs='[current_point.main_example.content]' x-word-diff-many=''></small>
+  </em>
+</div>
+<div>
+  <i class='small' style='color: black' x-no-track-action >
+    {{current_point.main_example.meaning}}
+  </i>
+</div>

@@ -1,0 +1,39 @@
+#current_lesson .btn{  
+  margin-bottom: 5px  
+}
+
+
+#top_people_panel{ margin-bottom: 5px }
+
+#top_people_panel .panel-body{ padding: 0px }
+
+.top_person{
+  position: relative;  
+  margin: 2px 0px 2px 2px;
+  display:inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+#top_people{font-size: 0}
+
+.top_person:last-child{margin-right: 2px}
+
+.top_person .order{
+  position: absolute;
+  top: 0;
+  left: 0; 
+}
+
+.top_person .name{
+  position: absolute;
+  bottom: 0;
+  left: 0;  
+}
+
+#top_people_panel .badge{
+  background-color: white;
+  color:  #999999;
+}
+
+#no_friends{padding:15px}

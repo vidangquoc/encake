@@ -1,0 +1,19 @@
+<div ng-show='!states.show_reminding'>
+  <div class='section alert alert-info review_title'>
+    Đọc lớn câu sau
+  </div>
+  <div class='section content'>
+    <span x-click-to-search-text='current_point.main_example.content'  x-on-search-finish = 'show_search_result(points)' > </span>
+    <div class='recorded' ng-show='states.recorded'>
+      <em>
+        <small left_obj='states.recorded' right_objs='[current_point.main_example.content]' x-word-diff-many=''></small>
+      </em>
+    </div>
+  </div>
+</div>
+
+<div ng-show='states.show_reminding'
+    class='section content alert alert-warning'
+    ng-include src='"templates/review_example.html"'
+>
+</div>

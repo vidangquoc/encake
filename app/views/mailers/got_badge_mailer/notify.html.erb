@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'emails' %>
+
+<% if @badge_type.badge_type == 'diligent' %>
+<%= @from_user.name %> đã học liên tục <%= @badge_type.number_of_efforts_to_get %> ngày và nhận được huy chương <%= @badge_type.name %>.
+<% else @badge_type.badge_type == 'warrior' %>
+Hôm nay, <%= @from_user.name %> đã học liên tục <%= @badge_type.number_of_efforts_to_get %> mục và nhận được huy chương.
+<% end %>
+<p>
+  <img src = '<%= URI.join(root_url, @badge_type.image_url) %>' />
+  <div>
+    <strong><%= @badge_type.name %></strong>
+  </div>
+</p>
+<p class='btn-container'>
+  <a class="btn" href="<%= root_url %>" >Lấy Huy Chương</a>
+</p>

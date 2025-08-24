@@ -1,0 +1,9 @@
+Chào <%= @user.first_name.blank? ? 'bạn' : @user.first_name %>
+<br/>
+<br/>
+Cảm ơn bạn đã đăng kí với encake.com. Sau đây là thông tin tài khoản của bạn :<br><br/>
+<strong>Tên đăng nhập:</strong> <%= @user.email %><br/>
+<strong>Mật khẩu:</strong> <%= @user.password %>
+<br/>
+<br/>
+Bạn có thể đổi lại mật khẩu sau khi đăng nhập.

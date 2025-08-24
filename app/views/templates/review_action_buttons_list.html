@@ -1,0 +1,110 @@
+<div class="list-group">
+  
+  <button
+    x-go-to-state='logged.edit_point' x-to-state-params='{"point_id": {{current_point.id}}}'
+    ng-show="states.shown_buttons['edit']"
+    x-track-action="Edit Word" x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >        
+    <span class='big_icon pull-right'>
+      <i class='fa fa-edit calm' ></i>
+    </span>
+    Chỉnh
+  </button>
+  
+  <button
+    ng-click='view_example()'
+    ng-disabled="!states.shown_buttons['view_example']"
+    x-track-action="View Examples" x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-list calm' ></i>
+    </span>
+    Xem Ví Dụ
+  </button>
+  
+  <button
+    x-click-to-open-url='https://www.google.com/search?safe=active&amp;tbm=isch&amp;q={{current_point.google_search_key || current_point.content}}'
+    ng-disabled="!states.shown_buttons['view_image']"
+    x-track-action="View Pictures"
+    x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-google calm' ></i>
+    </span>
+    Xem hình trên Google
+  </button>
+  
+  <button
+    x-go-to-state='logged.lesson' x-to-state-params='{"lesson_id": {{current_point.main_example.grammar_point.lesson_id || current_point.lesson_id}}, "show_back": true}'
+    ng-disabled="!states.shown_buttons['view_lesson']" x-track-action="View Lesson"
+    action-data="{{review.tracked_data}}"  class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-book calm' ></i>
+    </span>
+    Xem Bài Học
+  </button>
+  
+  <button
+    ng-click='mark_as_unmastered()'
+    ng-show='states.shown_buttons["unmaster"]'
+    x-track-action="Un-master" x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-hand-paper-o calm' ></i>
+    </span>
+    Chưa Nắm Vững
+  </button>
+  
+  <button
+    ng-click='mark_as_mastered()'
+    ng-disabled='!states.shown_buttons["master"]'
+    x-track-action="Master"
+    x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-hand-grab-o calm' ></i>
+    </span>
+    Đã Nắm Vững
+  </button>
+  
+  <button
+    ng-click='play_sound()'
+    ng-disabled="!states.shown_buttons['play_sound']"
+    x-track-action="Listen"
+    x-action-data="{{review.tracked_data}}"
+    class="list-group-item clearfix"
+    type='button'
+  >
+    <span class='big_icon pull-right'>
+      <i class='fa fa-volume-up calm' ></i>
+    </span>
+    Nghe
+  </button>
+  
+  <button id='microphone_dictating_on_list' ng-disabled="!states.shown_buttons['speech']" x-track-action="Speech" x-action-data="{{review.tracked_data}}" class="list-group-item clearfix" >
+    <span class='big_icon pull-right'>
+      <i class='fa calm '
+         x-on-start="states.recorded = ''"
+         x-speech x-speech-active-classes='fa-microphone assertive'
+         x-speech-inactive-classes='fa-microphone'
+         x-speech-model='states.recorded'
+         x-speech-trigger-id='microphone_dictating_on_list'
+         x-speech-unavailable-classes='fa-microphone-slash'
+      ></i>
+    </span>
+    Nói Thử
+  </button>
+  
+</div>

@@ -1,0 +1,1 @@
+json.partial! 'api/points/point_for_list', point: @point

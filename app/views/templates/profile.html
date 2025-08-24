@@ -1,0 +1,104 @@
+<div class='col-xs-12 main_content' id='profile_page'>
+  <form ng-submit='update()' name='profileForm' server-validation-message-collector="user.validation_messages" class='form-horizontal' enctype='multipart/form-data' novalidate>
+    <fieldset>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='user_last_name'>
+          Họ & Tên
+          <span class='required'>*</span>
+        </label>
+        <div class='col-sm-6'>
+          <div class='div'>
+            <div class='col-xs-4 name_part'>
+              <input ng-model='user.last_name' name="last_name" reset-validation-message-on-change autocomplete='off' class='form-control full-width' placeholder='Họ'>
+              <div class="error-container" ng-show="profileForm.last_name.$invalid" ng-messages="profileForm.last_name.$error">
+                <div class="error" ng-message="last_name">
+                  <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{profileForm.last_name.$error.last_name}}
+                </div>
+              </div>
+            </div>
+            <div class='col-xs-4 name_part'>
+              <input autocomplete='off' class='form-control' ng-model='user.middle_name' placeholder='Tên Lót'>
+            </div>
+            <div class='col-xs-4 name_part'>
+              <input ng-model='user.first_name' name='first_name' reset-validation-message-on-change placeholder='Tên'  autocomplete='off' class='form-control'>
+              <div class="error-container" ng-show="profileForm.first_name.$invalid" ng-messages="profileForm.first_name.$error">
+                <div class="error" ng-message="first_name">
+                  <i class="fa fa-arrow-circle-up" x-no-track-action></i> {{profileForm.first_name.$error.first_name}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='.user_email'>
+          Email
+          <span class='required'>*</span>
+        </label>
+        <div class='col-sm-6'>
+          <input autocomplete='off' class='form-control' ng-model='user.email' placeholder='Email' readonly>
+        </div>
+      </div>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='user_password'>
+          Mật khẩu
+        </label>
+        <div class='col-sm-6'>
+          <input ng-model='user.password' name='password' reset-validation-message-on-change placeholder='Mật khẩu' autocomplete='off' class='form-control' >
+          <div class="error-container" ng-show="profileForm.password.$invalid" ng-messages="profileForm.password.$error">
+            <div class="error" ng-message="password">
+              <i class="fa fa-arrow-circle-up" x-no-track-action></i> {{profileForm.password.$error.password}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='user_password_confirmation'>
+          Nhập lại mật khẩu
+        </label>
+        <div class='col-sm-6'>
+          <input ng-model='user.password_confirmation' name="password_confirmation" reset-validation-message-on-change placeholder='Nhập lại mật khẩu' autocomplete='off' class='form-control' >
+          <div class="error-container" ng-show="profileForm.password_confirmation.$invalid" ng-messages="profileForm.password_confirmation.$error">
+            <div class="error" ng-message="password_confirmation">
+              <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{profileForm.password_confirmation.$error.password_confirmation}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <label class='col-sm-3 control-label' for='avatar'>Hình đại diện</label>
+        <div class='col-sm-6'>
+          <img ng-show='user.avatar.thumb.url' ng-src='{{user.avatar.thumb.url}}' style='margin-bottom:2px'>
+          <span class='btn btn-default btn-file' x-track-action="Select Photo" >
+            <input accept='image/*' ng-model='user.avatar' ngf-select type='file'>
+          </span>
+        </div>
+      </div>
+      <div class='form-group gender_container'>
+        <div class='col-sm-6 col-sm-offset-3'>
+          <label>
+            <input id='user_gender_female' ng-model='user.gender' name='gender' reset-validation-message-on-change type='radio' value='female'>
+            Nữ
+          </label>
+          <label>
+            <input id='user_gender_male' ng-model='user.gender' name='gender' reset-validation-message-on-change type='radio' value='male'>
+            Nam
+          </label>
+          <div class="error-container" ng-show="profileForm.gender.$invalid" ng-messages="profileForm.gender.$error">
+            <div class="error" ng-message="gender">
+              <i class="fa fa-arrow-circle-up" x-no-track-action ></i> {{profileForm.gender.$error.gender}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <div class='col-sm-6 col-sm-offset-3'>
+          <button class='btn btn-primary' type='submit' x-show-spinner='updating' x-track-action="Update" >Cập nhật</button>
+          <span active-class='alert' class='inline-alert' duration='0' flash-alert id='update_profile_message'>
+            <span class='alert-message'>{{flash.message}}</span>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

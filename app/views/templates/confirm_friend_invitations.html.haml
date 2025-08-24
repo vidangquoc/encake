@@ -1,0 +1,27 @@
+.col-xs-12.main_content
+
+  %form{'ng-submit' => 'confirm()'}
+  
+    %fieldset.break-word
+    
+      .form-group
+    
+        .col-lg-12{style: 'height: 300px; overflow-y: auto'}
+        
+          %ul.list-group
+          
+            %li.list-group-item{'ng-repeat' => 'email in emails'}
+            
+              %div{style: 'width: 100%; overflow: hidden'}
+                
+                %label{class: 'email', style: 'word-wrap: break-all'}
+                     
+                  %input{type: 'checkbox', 'ng-model' => 'email.selected'}
+                    
+                    {{email.email}}
+                                                                                
+      .form-group
+      
+        .col-sm-5.col-md-3
+              
+          %input.btn.btn-primary.btn-block{type: 'submit', value: 'Mời bạn'}
